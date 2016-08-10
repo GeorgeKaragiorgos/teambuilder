@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokemon Teambuilder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <style>
+  #pokemon_table{display:block-inline}
+  #main_table{display:block-inline}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://GeorgeKaragiorgos.github.io/teambuilder">Teambuilder</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="https://github.com/GeorgeKaragiorgos/teambuilder" target="_blank">Github</a></li>
+          <li><a href="https://twitter.com/GeorgeSlayerGr" target="_blank">Twitter</a></li>
+          <li><a href="https://vuejs.org/" target="_blank">Vue.js</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="table-responsive">
+          <table id="pokemon_table" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Pokemon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><pokemonoptions child-number=1></pokemonoptions></td>
+                <td><pokemonoptions child-number=2></pokemonoptions></td>
+              </tr>
+              <tr>
+                <td><pokemonoptions child-number=3></pokemonoptions></td>
+                <td><pokemonoptions child-number=4></pokemonoptions></td>
+              </tr>
+              <tr>
+                <td><pokemonoptions child-number=5></pokemonoptions></td>
+                <td><pokemonoptions child-number=6></pokemonoptions></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="table-responsive">
+          <table id="main_table" class="table table-condensed table-bordered">
+            <thead>
+              <tr>
+                <th>Types</th>
+                <th>0x</th>
+                <th>0.25x</th>
+                <th>0.5x</th>
+                <th>1x</th>
+                <th>2x</th>
+                <th>4x</th>
+              </tr>
+            </th>
+            <tbody>
+              <template v-for="type in types">
+                <tr>
+                  <td>{{type}}</td>
+                  <td>{{count[type]['immunity']}}</td>
+                  <td>{{count[type]['double_resistance']}}</td>
+                  <td>{{count[type]['resistance']}}</td>
+                  <td>{{count[type]['normal']}}</td>
+                  <td>{{count[type]['weakness']}}</td>
+                  <td>{{count[type]['double_weakness']}}</td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
